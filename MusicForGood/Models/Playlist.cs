@@ -7,8 +7,6 @@ public class Playlist
 {
   [Required(ErrorMessage="Name cannot be empty")]
   public string Name {get; set;}
-
   public int PlaylistId {get; set;}
   public List<PlaylistSong> JoinEntities{get; set;}
-
 }

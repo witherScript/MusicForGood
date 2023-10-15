@@ -1,0 +1,26 @@
+@using MusicForGood.Models
+@model MusicForGood.Models.Song
+
+<h2>Song Information</h2>
+<hr/>
+
+<h3>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)<h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This song is not in any playlists</p>
+}
+else
+{
+  <h4>This Song is in the following playlists:</h4>
+  <ul>
+    @foreach(PlaylistSong join in Model.JoinEntities)
+    { 
+      <li>Playlist: @join.Playlist.Name</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Add to Playlist", "AddPlaylist", new {id = Model.SongId})</p>
+

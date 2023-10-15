@@ -1,0 +1,15 @@
+@model MusicForGood.Models.Playlist
+
+<h2>Add a song to this playlist: @Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.PlaylistId);
+
+  @Html.Label("Select Song");
+  @Html.DropDownList("SongId");
+
+  <input type="submit" value="Save"/>
+}
+ 
+ <p>@Html.ActionLink("Back to list", "Index")</p>

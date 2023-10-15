@@ -1,0 +1,17 @@
+@model MusicForGood.Models.Song
+
+<h4>Add a new Song</h4>
+
+<p>@Html.ValidationMessageFor(model => model.Title, "", new {@class="text-danger", @style="font-weight: 600;"})</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title)
+  <br>
+  <br>
+
+  <input type="submit" value="Add new song" class="btn btn-default" />
+}
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

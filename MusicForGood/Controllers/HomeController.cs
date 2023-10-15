@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DoctorsOffice.Controllers
+namespace MusicForGood.Controllers
 {
     public class HomeController : Controller
     {

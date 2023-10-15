@@ -6,9 +6,8 @@ namespace MusicForGood.Models;
 public class Song
 {
   public int SongId {get; set;}
-  
   [Required(ErrorMessage="Title cannot be empty")]
   public string Title {get; set;}
 
-  List<PlaylistSong> JoinEntities {get; set;}
+  public List<PlaylistSong> JoinEntities {get; set;}
 }
